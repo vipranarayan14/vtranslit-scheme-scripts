@@ -14,7 +14,8 @@ In 'package.json':
 
 ```json
 {
-  //...
+  "...": "...",
+
   "scripts": {
     "build": "vtranslit-scheme build",
     "test": "vtranslit-scheme validate"

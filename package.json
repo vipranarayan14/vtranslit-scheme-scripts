@@ -24,7 +24,6 @@
   "scripts": {
     "eslint": "eslint .",
     "test": "node index.js",
-    "version": "git add -A dist",
     "postversion": "git push && git push --tags"
   },
   "husky": {

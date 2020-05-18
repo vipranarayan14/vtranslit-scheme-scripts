@@ -5,7 +5,7 @@ const schemeLoader = (schemeAsYaml) => {
 
   return `export const vTranslitScheme${scheme.code} = ${JSON.stringify(
     scheme
-  )};`; 
+  )}`;
 };
 
 module.exports = schemeLoader;

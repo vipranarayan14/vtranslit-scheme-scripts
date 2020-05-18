@@ -22,11 +22,15 @@
     "vtranslit-scheme": "bin/index.js"
   },
   "scripts": {
-    "eslint": "eslint ./**/*.js",
-    "precommit": "npm run eslint",
+    "eslint": "eslint .",
     "test": "node index.js",
-    "version": "npm run build && git add -A dist",
+    "version": "git add -A dist",
     "postversion": "git push && git push --tags"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint"
+    }
   },
   "dependencies": {
     "@babel/core": "7.9.6",

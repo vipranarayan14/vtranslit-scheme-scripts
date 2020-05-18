@@ -2,12 +2,12 @@
 
 const path = require('path');
 
+const log = require('../utils/log');
+
 const build = require('../commands/build');
 const validate = require('../commands/validate');
 
 const command = process.argv[2];
-
-const { log } = console;
 
 const USAGE = `
 Usage: vtranslit-scheme <command>
@@ -25,15 +25,15 @@ const outputDir = path.join(process.cwd(), './dist');
 const outputFile = 'scheme.js';
 
 if (!command) {
-  log(USAGE);
+  log.info(USAGE);
 } else {
   if (command === 'build') {
     validate(srcFile)
       .then(build(srcFile, outputDir, outputFile))
-      .catch(console.error);
+      .catch(log.error);
   } else if (command === 'validate') {
-    validate(srcFile).catch(console.error);
+    validate(srcFile).catch(log.error);
   } else {
-    log(invalidCommand(command));
+    log.info(invalidCommand(command));
   }
 }

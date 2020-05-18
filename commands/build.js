@@ -3,6 +3,8 @@ const _rimraf = require('rimraf');
 const _webpack = require('webpack');
 const { promisify } = require('util');
 
+const log = require('../utils/log');
+
 const rimraf = promisify(_rimraf);
 
 const webpack = (config) =>
@@ -59,7 +61,7 @@ const logBuildDetails = ({ entry, output }) => {
   const outputDir = getRelativePath(output.path);
   const outputFile = getRelativePath(output.filename);
 
-  console.log(
+  log.info(
     `SchemeBuild: "${srcFile}" is converted and written to "${outputDir}/${outputFile}."`
   );
 };

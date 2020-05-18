@@ -5,6 +5,8 @@ const yaml = require('js-yaml');
 
 const vTranslitSchemeSchema = require('../utils/vtranslit-scheme-schema.json');
 
+const log = require('../utils/log');
+
 const loadScheme = (filepath) => fs.readFile(filepath, 'utf-8');
 
 const convertToJSON = (schemeAsYAML) =>
@@ -30,7 +32,7 @@ const validateScheme = (schemeAsJSON) =>
   });
 
 const logNoProblems = () =>
-  console.log('\nSchemeValidation: No problems in the scheme.');
+  log.info('\nSchemeValidation: No problems in the scheme.');
 
 const validate = (filepath) =>
   loadScheme(filepath)

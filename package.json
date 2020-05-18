@@ -1,6 +1,6 @@
 {
   "name": "vtranslit-scheme-scripts",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Scripts to validate and export vtranslit schemes written in YAML as a plugin for vtranslit.",
   "keywords": [
     "ITRANS",

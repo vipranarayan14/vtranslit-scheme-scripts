@@ -19,7 +19,7 @@
   "author": "Prasanna Venkatesh T S <vipranarayan14@gmail.com>",
   "main": "index.js",
   "bin": {
-    "vtranslit-scheme": "bin/index.js"
+    "vtranslit-scheme": "dist/index.js"
   },
   "scripts": {
     "build": "rimraf dist && babel src -d dist --presets=@babel/preset-env --minified",

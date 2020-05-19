@@ -17,7 +17,6 @@
   },
   "license": "MIT",
   "author": "Prasanna Venkatesh T S <vipranarayan14@gmail.com>",
-  "main": "index.js",
   "bin": {
     "vtranslit-scheme": "dist/index.js"
   },

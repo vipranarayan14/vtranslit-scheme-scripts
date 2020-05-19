@@ -20,8 +20,11 @@
   "bin": {
     "vtranslit-scheme": "dist/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "rimraf dist && babel src -d dist --presets=@babel/preset-env --minified",
+    "build": "rimraf dist && babel src -d dist -D --presets=@babel/preset-env --minified",
     "eslint": "eslint .",
     "test": "node index.js",
     "postversion": "git push && git push --tags"

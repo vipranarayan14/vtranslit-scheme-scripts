@@ -1,9 +1,9 @@
-const path = require('path');
-const _rimraf = require('rimraf');
-const _webpack = require('webpack');
-const { promisify } = require('util');
+import path from 'path';
+import _rimraf from 'rimraf';
+import _webpack from 'webpack';
+import { promisify } from 'util';
 
-const log = require('../utils/log');
+import log from '../utils/log';
 
 const rimraf = promisify(_rimraf);
 
@@ -66,7 +66,7 @@ const logBuildDetails = ({ entry, output }) => {
   );
 };
 
-const build = (entry, outputDir, outputFile) => () =>
+export const build = (entry, outputDir, outputFile) => () =>
   new Promise((resolve, reject) => {
     rimraf(outputDir)
       .then(makeConfig(entry, outputDir, outputFile))
@@ -75,5 +75,3 @@ const build = (entry, outputDir, outputFile) => () =>
       .then(resolve)
       .catch(reject);
   });
-
-module.exports = build;

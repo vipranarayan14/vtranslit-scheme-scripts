@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const path = require('path');
+import path from 'path';
 
-const log = require('./utils/log');
+import log from './utils/log';
 
-const build = require('./commands/build');
-const validate = require('./commands/validate');
+import { build } from './commands/build';
+import { validate } from './commands/validate';
 
 const command = process.argv[2];
 

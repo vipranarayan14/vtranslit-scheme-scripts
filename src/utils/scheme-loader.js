@@ -1,4 +1,4 @@
-const yaml = require('js-yaml');
+import yaml from 'js-yaml';
 
 const schemeLoader = (schemeAsYaml) => {
   const scheme = yaml.safeLoad(schemeAsYaml);
@@ -8,4 +8,4 @@ const schemeLoader = (schemeAsYaml) => {
   )}`;
 };
 
-module.exports = schemeLoader;
+export default schemeLoader;

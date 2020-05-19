@@ -1,11 +1,11 @@
-const fs = require('fs').promises;
+import { promises as fs } from 'fs';
 
-const Ajv = require('ajv');
-const yaml = require('js-yaml');
+import Ajv from 'ajv';
+import yaml from 'js-yaml';
 
-const vTranslitSchemeSchema = require('../utils/vtranslit-scheme-schema.json');
+import vTranslitSchemeSchema from '../utils/vtranslit-scheme-schema.json';
 
-const log = require('../utils/log');
+import log from '../utils/log';
 
 const loadScheme = (filepath) => fs.readFile(filepath, 'utf-8');
 
@@ -34,10 +34,8 @@ const validateScheme = (schemeAsJSON) =>
 const logNoProblems = () =>
   log.info('\nSchemeValidation: No problems in the scheme.');
 
-const validate = (filepath) =>
+export const validate = (filepath) =>
   loadScheme(filepath)
     .then(convertToJSON)
     .then(validateScheme)
     .then(logNoProblems);
-
-module.exports = validate;

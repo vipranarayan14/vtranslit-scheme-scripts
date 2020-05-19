@@ -5,7 +5,7 @@ const handleArray = (log) => (msg) =>
     ? msg.forEach((_msg) => log(`\n${_msg}`))
     : log(`\n${msg}`);
 
-module.exports = {
+export default {
   info: handleArray(info),
   error: handleArray(error),
 };

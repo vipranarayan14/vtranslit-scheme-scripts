@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "maxLength": 4,
+      "minLength": 4
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["brahmic", "roman"]
+    },
+    "unicodeBlock": {
+      "type": "string"
+    },
+    "map": {
+      "properties": {
+        "ayogavaha": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "consonants": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "symbols": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "vowelMarks": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "vowels": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      },
+      "required": ["ayogavaha", "consonants", "symbols", "vowelMarks", "vowels"]
+    }
+  },
+  "required": ["code", "name", "type", "unicodeBlock"]
+}

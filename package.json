@@ -22,7 +22,7 @@
     "vtranslit-scheme": "bin/index.js"
   },
   "scripts": {
-    "build": "rimraf dist && babel src -d dist --minified",
+    "build": "rimraf dist && babel src -d dist --presets=@babel/preset-env --minified",
     "eslint": "eslint .",
     "test": "node index.js",
     "postversion": "git push && git push --tags"

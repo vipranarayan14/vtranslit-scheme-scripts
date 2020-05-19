@@ -2,10 +2,10 @@
 
 const path = require('path');
 
-const log = require('../utils/log');
+const log = require('./utils/log');
 
-const build = require('../commands/build');
-const validate = require('../commands/validate');
+const build = require('./commands/build');
+const validate = require('./commands/validate');
 
 const command = process.argv[2];
 

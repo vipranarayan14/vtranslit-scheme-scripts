@@ -25,8 +25,9 @@
   ],
   "scripts": {
     "build": "rimraf dist && babel src -d dist -D --presets=@babel/preset-env --minified",
-    "eslint": "eslint .",
     "test": "node index.js",
+    "eslint": "eslint .",
+    "version": "npm run build && git add -A dist",
     "postversion": "git push && git push --tags"
   },
   "husky": {

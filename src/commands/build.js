@@ -28,9 +28,7 @@ const babelLoader = {
   },
 };
 
-const schemeLoader = path.resolve(__dirname, '../utils/scheme-loader.js');
-
-const makeConfig = (entry, dir, filename) => () =>
+const makeConfig = (entry, dir, filename) =>
   new Promise((resolve) =>
     resolve({
       entry,
@@ -38,7 +36,7 @@ const makeConfig = (entry, dir, filename) => () =>
       module: {
         rules: [
           {
-            use: [babelLoader, schemeLoader],
+            use: [babelLoader, 'vtranslit-scheme-loader'],
           },
         ],
       },

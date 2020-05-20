@@ -7,7 +7,7 @@ Scripts to validate and export vtranslit schemes written in YAML as a plugin for
 Install:
 
 ```sh
-$ npm i vtranslit-scheme
+$ npm i vtranslit-scheme-scripts
 ```
 
 In 'package.json':

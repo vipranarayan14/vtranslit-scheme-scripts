@@ -1,11 +1,8 @@
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import path from 'path';
-import _rimraf from 'rimraf';
 import _webpack from 'webpack';
-import { promisify } from 'util';
 
 import log from '../utils/log';
-
-const rimraf = promisify(_rimraf);
 
 const webpack = (config) =>
   new Promise((resolve, reject) =>
@@ -45,6 +42,7 @@ const makeConfig = (entry, dir, filename) => () =>
           },
         ],
       },
+      plugins: [new CleanWebpackPlugin()],
       output: {
         filename,
         libraryTarget: 'umd',
@@ -68,8 +66,7 @@ const logBuildDetails = ({ entry, output }) => {
 
 export const build = (entry, outputDir, outputFile) => () =>
   new Promise((resolve, reject) => {
-    rimraf(outputDir)
-      .then(makeConfig(entry, outputDir, outputFile))
+    makeConfig(entry, outputDir, outputFile)
       .then(webpack)
       .then(logBuildDetails)
       .then(resolve)

@@ -22,9 +22,9 @@ const webpack = (config) =>
   );
 
 const babelLoader = {
-  loader: require.resolve('babel-loader'),
+  loader: 'babel-loader',
   options: {
-    presets: [require.resolve('@babel/preset-env')],
+    presets: ['@babel/preset-env'],
   },
 };
 

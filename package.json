@@ -24,7 +24,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && webpack",
+    "build": "webpack",
     "test": "node index.js",
     "eslint": "eslint .",
     "version": "npm run build && git add -A dist",
@@ -40,8 +40,8 @@
     "@babel/preset-env": "7.9.6",
     "ajv": "6.12.2",
     "babel-loader": "8.1.0",
+    "clean-webpack-plugin": "3.0.0",
     "js-yaml": "3.13.1",
-    "rimraf": "3.0.2",
     "webpack": "4.43.0"
   },
   "devDependencies": {

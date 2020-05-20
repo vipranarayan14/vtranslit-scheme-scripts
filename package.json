@@ -24,7 +24,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && babel src -d dist -D --presets=@babel/preset-env --minified",
+    "build": "rimraf dist && webpack",
     "test": "node index.js",
     "eslint": "eslint .",
     "version": "npm run build && git add -A dist",
@@ -50,6 +50,6 @@
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.3",
     "husky": "4.2.5",
-    "prettier": "2.0.5"
+    "webpack-cli": "3.3.11",
   }
 }

@@ -1,4 +1,13 @@
 {
+  "definitions": {
+    "charMap": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["string", "array"]
+      }
+    }
+  },
+
   "type": "object",
   "properties": {
     "code": {
@@ -19,24 +28,19 @@
     "map": {
       "properties": {
         "ayogavaha": {
-          "type": "object",
-          "additionalProperties": { "type": "string" }
+          "$ref": "#/definitions/charMap"
         },
         "consonants": {
-          "type": "object",
-          "additionalProperties": { "type": "string" }
+          "$ref": "#/definitions/charMap"
         },
         "symbols": {
-          "type": "object",
-          "additionalProperties": { "type": "string" }
+          "$ref": "#/definitions/charMap"
         },
         "vowelMarks": {
-          "type": "object",
-          "additionalProperties": { "type": "string" }
+          "$ref": "#/definitions/charMap"
         },
         "vowels": {
-          "type": "object",
-          "additionalProperties": { "type": "string" }
+          "$ref": "#/definitions/charMap"
         }
       },
       "required": ["ayogavaha", "consonants", "symbols", "vowelMarks", "vowels"]
